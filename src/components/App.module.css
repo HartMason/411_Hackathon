@@ -12,8 +12,12 @@
 .link {
     text-decoration: none;
 }
+.title {
+    list-style: none;
+}
 .wrapper {
     border-left: 5vw solid black;
     border-right: 5vw solid black;
     border-bottom: 5vh solid black;
+    background-color: rgb(248, 242, 242);
 }

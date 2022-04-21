@@ -15,13 +15,13 @@ const App = () => {
 // ! state and functions for me and Hart below
 // all inital front page search results array from the fetch request are saved in this variable
 const FetchFrontPageContext = useContext(FrontPageContext)
-console.log(FetchFrontPageContext)
+
 
 
 const data = FetchFrontPageContext.map((item, index )=> {
     return (
         <>
-            <li key={index}>
+            <li className={classes.title} key={index}>
                 {item.title}
             </li>
             <a className={classes.link} key={item.objectID} href={item.url}>
@@ -29,7 +29,9 @@ const data = FetchFrontPageContext.map((item, index )=> {
             </a>
             <div className={classes.info} key={Math.random()}>
                 <span className={classes['info-items']}>Created at: {item.created_at}</span>
+                <span className={classes['info-items']}> | </span>
                 <span className={classes['info-items']}>Created by: {item.author}</span>
+                <span className={classes['info-items']}> | </span>
                 <span className={classes['info-items']}>Points: {item.points}</span>
             </div>
             <hr />
