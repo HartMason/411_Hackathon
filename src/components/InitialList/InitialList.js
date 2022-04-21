@@ -9,7 +9,7 @@ const InitialList = () => {
 
     const data = FetchFrontPageContext.map((item, index )=> {
         return (
-            <>
+            <div className={classes.hovers}>
                 <li className={classes.title} key={index}>
                     {item.title}
                 </li>
@@ -24,7 +24,7 @@ const InitialList = () => {
                     <span className={classes['info-items']}>Created at: <b>{item.created_at}</b></span>
                 </div>
                 <hr />
-            </>
+            </div>
         )
     })
 
