@@ -1,0 +1,19 @@
+:root {
+
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+}
+.info-items {
+    margin: .5px 5px;
+}
+.link {
+    text-decoration: none;
+}
+.wrapper {
+    border-left: 5vw solid black;
+    border-right: 5vw solid black;
+    border-bottom: 5vh solid black;
+}

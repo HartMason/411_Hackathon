@@ -4,7 +4,7 @@ import './Header.css'
 const Header = () => {
   return (
     <div>
-        Header
+       SPACE FOR JOHHNYS HEADER (:
     </div>
   )
 }
