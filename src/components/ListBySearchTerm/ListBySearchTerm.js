@@ -3,11 +3,11 @@ import SearchTermContext from '../../store/search-term-context'
 
 import classes from './ListBySearchTerm.module.css'
 
-const ListBySearchTerm = ({ term }) => {
+const ListBySearchTerm = () => {
     const fetchSearchTermContext = useContext(SearchTermContext)
 
 
-const data = fetchSearchTermContext.map((item, index )=> {
+const data = fetchSearchTermContext.map(( item, index )=> {
     return (
         <>
             <li className={classes.title} key={index}>
@@ -30,7 +30,7 @@ const data = fetchSearchTermContext.map((item, index )=> {
 
 
   return (
-    <div>{ data.length === 0 ? <h1>Loading...</h1> : data }</div>
+    <ul>{ data.length === 0 ? <h1>Loading...</h1> : data }</ul>
   )
 }
 
