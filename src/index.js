@@ -5,11 +5,14 @@ import App from './components/App';
 import FrontPageContextProvider from './store/FrontPageContextProvider'
 
 
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-<FrontPageContextProvider>
-    <App />
-</FrontPageContextProvider>
+  
+    <FrontPageContextProvider>
+        <App />
+    </FrontPageContextProvider>
+  
   
 );
 

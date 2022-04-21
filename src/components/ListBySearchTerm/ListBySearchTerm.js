@@ -1,17 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext } from 'react'
+import SearchTermContext from '../../store/search-term-context'
+
 import classes from './ListBySearchTerm.module.css'
 
 const ListBySearchTerm = ({ term }) => {
-    const [searchResults, setSearchResults] = useState([])
-    // ! Hart will have to set up the search term to work
+    const fetchSearchTermContext = useContext(SearchTermContext)
 
-useEffect(() => {
-    fetch(`https://hn.algolia.com/api/v1/search?query=building&tags=story`)
-        .then(response => response.json())
-        .then(data => setSearchResults(data.hits))
-}, [])
 
-const data = searchResults.map((item, index )=> {
+const data = fetchSearchTermContext.map((item, index )=> {
     return (
         <>
             <li className={classes.title} key={index}>

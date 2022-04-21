@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import Header from './Header/Header'
 import InitialList from './InitialList/InitialList'
 import ListBySearchTerm from './ListBySearchTerm/ListBySearchTerm'
+import SearchTermContextProvider from '../store/SearchTermContextProvider'
 import classes from './App.module.css'
 
 const App = () => {
@@ -15,16 +16,19 @@ const App = () => {
  }
 
 
-// ! Me and hart will handle everything below here
-
-
+// ! Me and hart will handle everything else in the app
 
 
 
   return (
     <main className={classes.wrapper}>
+
         <Header searchTerm={searchTerm} onChange={ (e) => handleOnChange(e) } />
-        {searchTerm ? <ListBySearchTerm /> : <InitialList />}
+
+        {!searchTerm ? <InitialList /> : (  <SearchTermContextProvider  searchTerm={searchTerm}>
+                                                <ListBySearchTerm />
+                                            </SearchTermContextProvider>
+                                        )}
        
         
     </main>
