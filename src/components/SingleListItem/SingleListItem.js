@@ -10,7 +10,7 @@ const SingleListItem = ({ url, title, points, author, created_at}) => {
             <a className={classes.link} href={url}>
                 {url}
             </a>
-            <div className={classes.info} key={Math.random()}>
+            <div className={classes.info} >
                 <span className={classes['info-items']}>Points: <b>{points}</b></span>
                 <span className={classes['info-items']}> | </span>
                 <span className={classes['info-items']}>Created by: <b>{author}</b></span>
