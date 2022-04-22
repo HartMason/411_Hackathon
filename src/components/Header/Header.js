@@ -1,12 +1,10 @@
-import React from 'react'
-import classes from './Header.module.css'
+import React from "react";
+import "./Header.css";
 
 const Header = () => {
-  return (
-    <div className={classes['form-input']}>
+  return <div>
 
-    </div>
-  )
-}
+  </div>;
+};
 
-export default Header
+export default Header;
