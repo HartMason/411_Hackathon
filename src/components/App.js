@@ -35,7 +35,7 @@ const searchByNameOrAuthorRender = () => {
         return (
             <main className={classes.wrapper}>
                 <Header searchTerm={searchTerm} handleOnChange={ (e) => handleOnChange(e) } />
-                <button onClick={searchByAuthorClickHandler}>search by author</button>
+                <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Author</span></button>
 
                 {!searchTerm ? <InitialList /> : (  <SearchTermContextProvider searchTerm={searchTerm}>
                                                             <ListBySearchTerm />
@@ -48,7 +48,7 @@ const searchByNameOrAuthorRender = () => {
             <AuthorContextProvider author={author}>
                 <main className={classes.wrapper}>
                     <Header searchTerm={author} handleOnChange={ (e) => handleAuthorChange(e) } />
-                    <button onClick={searchByAuthorClickHandler}>Search by title</button>
+                    <button onClick={searchByAuthorClickHandler}className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
                     {/* ! Harts ListByAuthor component goes here !!
                          <ListByAuthor />  */}
                     
