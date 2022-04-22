@@ -12,7 +12,7 @@ const ListByAuthor = () => {
 
 
   return (
-    {data}
+    {}
   )
 }
 

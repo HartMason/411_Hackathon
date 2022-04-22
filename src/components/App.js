@@ -4,6 +4,7 @@ import InitialList from './InitialList/InitialList'
 import ListBySearchTerm from './ListBySearchTerm/ListBySearchTerm'
 import SearchTermContextProvider from '../store/SearchTermContextProvider'
 import AuthorContextProvider from '../store/AuthorContextProvider'
+import ListByAuthor from './ListByAuthor/ListByAuthor'
 import classes from './App.module.css'
 
 const App = () => {
@@ -16,7 +17,6 @@ const App = () => {
  }
 
 // TODO: Me and harts logic below
-
 
 const [searchByAuthor, setSearchByAuthor] = useState(false)
 const [author, setAuthor] = useState('')
@@ -48,10 +48,10 @@ const searchByNameOrAuthorRender = () => {
             <AuthorContextProvider author={author}>
                 <main className={classes.wrapper}>
                     <Header searchTerm={author} handleOnChange={ (e) => handleAuthorChange(e) } />
-                    // TODO: Create an ListByAuthor component to Render the author hits, 
-                     //TODO if there are none matching, render a message to the user saying so 
-
-                    <div>Search by author list goes here</div>
+                    <button onClick={searchByAuthorClickHandler}>Search by title</button>
+                    {/* ! Harts ListByAuthor component goes here !!
+                         <ListByAuthor />  */}
+                    
                 </main>
             </AuthorContextProvider>
         )
