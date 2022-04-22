@@ -4,6 +4,7 @@ import InitialList from './InitialList/InitialList'
 import ListBySearchTerm from './ListBySearchTerm/ListBySearchTerm'
 import SearchTermContextProvider from '../store/SearchTermContextProvider'
 import AuthorContextProvider from '../store/AuthorContextProvider'
+import ListByAuthor from './ListByAuthor/ListByAuthor'
 import classes from './App.module.css'
 import ListByAuthor from './ListByAuthor/ListByAuthor'
 
@@ -17,7 +18,6 @@ const App = () => {
  }
 
 // TODO: Me and harts logic below
-
 
 const [searchByAuthor, setSearchByAuthor] = useState(false)
 const [author, setAuthor] = useState('cgaebel')
@@ -36,7 +36,7 @@ const searchByNameOrAuthorRender = () => {
         return (
             <main className={classes.wrapper}>
                 <Header searchTerm={searchTerm} handleOnChange={ (e) => handleOnChange(e) } />
-                <button onClick={searchByAuthorClickHandler}>search by author</button>
+                <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Author</span></button>
 
                 {!searchTerm ? <InitialList /> : (  <SearchTermContextProvider searchTerm={searchTerm}>
                                                             <ListBySearchTerm />
@@ -49,11 +49,15 @@ const searchByNameOrAuthorRender = () => {
             <AuthorContextProvider author={author}>
                 <main className={classes.wrapper}>
                     <Header searchTerm={author} handleOnChange={ (e) => handleAuthorChange(e) } />
-                    // TODO: Create an ListByAuthor component to Render the author hits, 
-                     //TODO if there are none matching, render a message to the user saying so 
+
                     
-                    <div>Search by author list goes here</div>
+                  
+                   
+
+                    <button onClick={searchByAuthorClickHandler}className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
                     <ListByAuthor />
+                   
+
                 </main>
             </AuthorContextProvider>
         )

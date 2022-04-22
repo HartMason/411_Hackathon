@@ -20,3 +20,7 @@
     font-weight: var(--title-font-weight);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+.hovers:hover {
+    background-color: rgba(142, 191, 211, 0.8);
+    color: #fff;
+}

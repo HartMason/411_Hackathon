@@ -4,9 +4,7 @@ import SingleListItem from "../SingleListItem/SingleListItem";
 
 const ListByAuthor = () => {
   const fetchAuthorContext = useContext(AuthorContext);
-  // TODO: HART has to map over the fetched results of the fetchAuthorResults variable  and return a SingleListItem component
-  // TODO: The necessary props need to be passed into the SingleListItem component that is being mapped
-  // TODO save that into a variable and display it
+
   console.log(fetchAuthorContext)
 
   // url, title, points, author, created_at
@@ -21,9 +19,11 @@ const ListByAuthor = () => {
     />
   ));
 
+
   return <>
-    {data}
+    {!data ? <h1>Loading...</h1> : data } 
   </>;
 };
+
 
 export default ListByAuthor;
