@@ -7,6 +7,7 @@ const AuthorContextProvider = (props) => {
 
 
     React.useEffect(() => {
+        console.log('author fetch')
         fetch(`https://hn.algolia.com/api/v1/search?tags=story,author_${props.author}`)
             .then(response => response.json())
             .then(data => setAuthorResults(data.hits))
