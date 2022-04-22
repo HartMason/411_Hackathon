@@ -7,7 +7,7 @@ const ListBySearchTerm = () => {
     const fetchSearchTermContext = useContext(SearchTermContext)
 
 
-const data = fetchSearchTermContext.map(( item )=> {
+const data = fetchSearchTermContext.map(( item ) => {
     
         return  <SingleListItem
                     key={item.objectID}

@@ -16,7 +16,7 @@ const App = () => {
     setSearchTerm(e.target.value)
  }
 
-// TODO: Me and harts logic below
+// the rest of the application state and helper funcs
 
 const [searchByAuthor, setSearchByAuthor] = useState(false)
 const [author, setAuthor] = useState('')

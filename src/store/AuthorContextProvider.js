@@ -14,7 +14,7 @@ const AuthorContextProvider = (props) => {
     
 
 
-// TODO need to use context hook still to access authorResults in the future AuthorList component
+
 
     return (
         <AuthorContext.Provider value={authorResults}>
