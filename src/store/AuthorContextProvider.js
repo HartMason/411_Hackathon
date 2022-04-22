@@ -7,13 +7,14 @@ const AuthorContextProvider = (props) => {
 
 
     React.useEffect(() => {
-        fetch(`http://hn.algolia.com/api/v1/search?tags=story,author_${props.author}`)
+        fetch(`https://hn.algolia.com/api/v1/search?tags=story,author_${props.author}`)
             .then(response => response.json())
             .then(data => setAuthorResults(data.hits))
-    }, [])
+    }, [props.author])
+    
 
 
-
+// TODO need to use context hook still to access authorResults in the future AuthorList component
 
     return (
         <AuthorContext.Provider value={authorResults}>

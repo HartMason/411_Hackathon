@@ -15,7 +15,7 @@ const App = () => {
     setSearchTerm(e.target.value)
  }
 
-// TODO: me and harts logic below
+// TODO: Me and harts logic below
 
 
 const [searchByAuthor, setSearchByAuthor] = useState(false)
@@ -47,10 +47,10 @@ const searchByNameOrAuthorRender = () => {
         return (
             <AuthorContextProvider author={author}>
                 <main className={classes.wrapper}>
-                    <Header searchTerm={searchTerm} handleOnChange={ (e) => handleOnChange(e) } />
-                    // TODO: Create an AuthorList component to Render the author hits, 
+                    <Header searchTerm={author} handleOnChange={ (e) => handleAuthorChange(e) } />
+                    // TODO: Create an ListByAuthor component to Render the author hits, 
                      //TODO if there are none matching, render a message to the user saying so 
-                     
+
                     <div>Search by author list goes here</div>
                 </main>
             </AuthorContextProvider>
