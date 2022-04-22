@@ -6,7 +6,7 @@ import SearchTermContextProvider from '../store/SearchTermContextProvider'
 import AuthorContextProvider from '../store/AuthorContextProvider'
 import ListByAuthor from './ListByAuthor/ListByAuthor'
 import classes from './App.module.css'
-import ListByAuthor from './ListByAuthor/ListByAuthor'
+
 
 const App = () => {
 
@@ -20,7 +20,7 @@ const App = () => {
 // the rest of the application state and helper funcs
 
 const [searchByAuthor, setSearchByAuthor] = useState(false)
-const [author, setAuthor] = useState('cgaebel')
+const [author, setAuthor] = useState('hart')
 
 
 const handleAuthorChange = (e) => {
@@ -50,11 +50,7 @@ const searchByNameOrAuthorRender = () => {
                 <main className={classes.wrapper}>
                     <Header searchTerm={author} handleOnChange={ (e) => handleAuthorChange(e) } />
 
-                    
-                  
-                   
-
-                    <button onClick={searchByAuthorClickHandler}className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
+                    <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
                     <ListByAuthor />
                    
 
