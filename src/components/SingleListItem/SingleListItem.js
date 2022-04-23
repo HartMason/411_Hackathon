@@ -7,8 +7,8 @@ const SingleListItem = ({ url, title, points, author, created_at}) => {
             <li className={classes.title} >
                 {title || 'Title not found'}
             </li>
-            <a className={classes.link} href={url}>
-                {url || <a href="#">ClickMe.com</a>}
+            <a className={classes.link} href={url || '#'}>
+                {url || ClickMe.com}
             </a>
             <div className={classes.info} >
                 <span className={classes['info-items']}>Points: <b>{points || 0 }</b></span>
