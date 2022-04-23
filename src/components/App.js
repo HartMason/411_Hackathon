@@ -13,7 +13,7 @@ const App = () => {
 
  const [searchTerm, setSearchTerm] = useState('')
  const [author, setAuthor] = useState('rob')
- const [date, setDate] = useState('january')
+ const [date, setDate] = useState('02')
  const [searchByAuthor, setSearchByAuthor] = useState(false)
 const [searchByDate, setSearchByDate] = useState(false)
 
@@ -71,7 +71,6 @@ const searchByNameOrDateOrAuthorRender = () => {
             <AuthorContextProvider author={author}>
                 <main className={classes.wrapper}>
                     <Header searchTerm={author} handleOnChange={ (e) => handleAuthorChange(e) } />
-
                     <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
                     <ListByAuthor />
                 </main>

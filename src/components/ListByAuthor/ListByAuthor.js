@@ -11,6 +11,7 @@ const ListByAuthor = () => {
 
   let data = fetchAuthorContext.map((item) => (
     <SingleListItem 
+      key={item.objectID}
       url={item.url}
       title={item.title}
       points={item.points}
