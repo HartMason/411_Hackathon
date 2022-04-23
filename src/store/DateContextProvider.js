@@ -9,12 +9,12 @@ useEffect(() => {
     fetch(`https://hn.algolia.com/api/v1/search_by_date?query=${props.date}`)
         .then(response => response.json())
         .then(data => setDateResults(data.hits))
-})
+}, [props.date])
 
 
 
   return (
-    <DateContext.Provider>
+    <DateContext.Provider value={dateResults}>
         {props.children}
     </DateContext.Provider>
   )
