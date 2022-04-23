@@ -7,7 +7,7 @@ const InitialList = () => {
 
     const FetchFrontPageContext = useContext(FrontPageContext)
 
-    const data = FetchFrontPageContext.map((item, index )=> {
+    const data = FetchFrontPageContext.map((item)=> {
 
 
         return  <SingleListItem
