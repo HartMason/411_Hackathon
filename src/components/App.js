@@ -9,9 +9,11 @@ import ListByAuthor from './ListByAuthor/ListByAuthor'
 import classes from './App.module.css'
 
 
-const App = () => {
 
- const [searchTerm, setSearchTerm] = useState('')
+const App = () => {
+    
+
+ const [searchTerm, setSearchTerm] = useState('building')
  const [author, setAuthor] = useState('rob')
  const [date, setDate] = useState('02')
  const [searchByAuthor, setSearchByAuthor] = useState(false)
