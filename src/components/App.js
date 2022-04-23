@@ -11,19 +11,15 @@ import classes from './App.module.css'
 
 const App = () => {
 
-// ! state and helper func for Johnnys header component
  const [searchTerm, setSearchTerm] = useState('')
+ const [author, setAuthor] = useState('rob')
+ const [date, setDate] = useState('january')
+ const [searchByAuthor, setSearchByAuthor] = useState(false)
+const [searchByDate, setSearchByDate] = useState(false)
 
- const handleOnChange = (e) => {
+ const handleSearchChange = (e) => {
     setSearchTerm(e.target.value)
  }
-
-// the rest of the application state and helper funcs
-
-const [searchByAuthor, setSearchByAuthor] = useState(false)
-const [author, setAuthor] = useState('rob')
-const [date, setDate] = useState('january')
-const [searchByDate, setSearchByDate] = useState(false)
 
 
 const handleAuthorChange = (e) => {
@@ -43,12 +39,11 @@ const searchByDateClickHandler = () => {
 }
 
 
-
 const searchByNameOrDateOrAuthorRender = () => {
     if (!searchByDate && !searchByAuthor) {
         return (
             <main className={classes.wrapper}>
-                <Header searchTerm={date} handleOnChange={ (e) => handleOnChange(e) } />
+                <Header searchTerm={searchTerm} handleOnChange={ (e) => handleSearchChange(e) } />
                 <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Author</span></button>
                 <button onClick={searchByDateClickHandler} className={classes.pushable}><span className={classes.front}>Search by Date</span></button>
 
@@ -79,8 +74,6 @@ const searchByNameOrDateOrAuthorRender = () => {
 
                     <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
                     <ListByAuthor />
-                   
-
                 </main>
             </AuthorContextProvider>
         )
