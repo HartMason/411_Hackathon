@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from "react";
+import React, { useContext } from "react";
 import AuthorContext from "../../store/author-context";
 import SingleListItem from "../SingleListItem/SingleListItem";
 
@@ -21,7 +21,7 @@ const ListByAuthor = () => {
 
 
   return <>
-    {!data ? <h1>Loading...</h1> : data } 
+    { data.length === 0 ? <h1>Loading Results...</h1> : data } 
   </>;
 };
 
