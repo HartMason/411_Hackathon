@@ -45,21 +45,20 @@ const searchByDateClickHandler = () => {
 const searchByTitleOrDateOrAuthorRender = () => {
 if (!searchByDate && !searchByAuthor) {
     return (
-         <>
-         <Header searchTerm={searchTerm} handleOnChange={ (e) => handleSearchChange(e) } />
-         <main className={classes.wrapper}>
-             <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Author</span></button>
-             <button onClick={searchByDateClickHandler} className={classes.pushable}><span className={classes.front}>Search by Date</span></button>
+     <>
+        <Header searchTerm={searchTerm} handleOnChange={ (e) => handleSearchChange(e) } />
+        <main className={classes.wrapper}>
+            <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Author</span></button>
+            <button onClick={searchByDateClickHandler} className={classes.pushable}><span className={classes.front}>Search by Date</span></button>
 
-             {!searchTerm ? <InitialList /> : (  <SearchTermContextProvider searchTerm={searchTerm}>
+            {!searchTerm ? <InitialList /> : (  <SearchTermContextProvider searchTerm={searchTerm}>
                                                             <ListBySearchTerm />
                                                         </SearchTermContextProvider>
                                                     )}
-         </main> 
-    </>) }
-        
- else if (!searchByAuthor && searchByDate) {
-        return (
+        </main> 
+    </>) }     
+else if (!searchByAuthor && searchByDate) {
+    return (
         <DateContextProvider date={date}>
             <Header searchTerm={searchByDate} handleOnChange={(e) => handleDateChange(e)} />
             <main className={classes.wrapper}>
@@ -68,17 +67,17 @@ if (!searchByDate && !searchByAuthor) {
                 {/*// ! Harts <ListByDate /> component goes here //*/}
             </main>
         </DateContextProvider> )
-           
-                    
-    }  else if (searchByAuthor && !searchByDate) {
-        return (
-            <AuthorContextProvider author={author}>
-                <Header searchTerm={author} handleOnChange={ (e) => handleAuthorChange(e) } />
-                <main className={classes.wrapper}>
-                    <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
-                    <ListByAuthor />
-                </main>
-            </AuthorContextProvider>
+          
+    }  
+else if (searchByAuthor && !searchByDate) {
+     return (
+        <AuthorContextProvider author={author}>
+            <Header searchTerm={author} handleOnChange={ (e) => handleAuthorChange(e) } />
+            <main className={classes.wrapper}>
+                <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
+                <ListByAuthor />
+            </main>
+        </AuthorContextProvider>
         )
     }
 }
