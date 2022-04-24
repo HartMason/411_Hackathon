@@ -17,9 +17,9 @@ const App = () => {
  const [author, setAuthor] = useState('rob')
  const [date, setDate] = useState('02')
  const [searchByAuthor, setSearchByAuthor] = useState(false)
-const [searchByDate, setSearchByDate] = useState(false)
+ const [searchByDate, setSearchByDate] = useState(false)
 
- const handleSearchChange = (e) => {
+const handleSearchChange = (e) => {
     setSearchTerm(e.target.value)
  }
 
@@ -28,20 +28,21 @@ const handleAuthorChange = (e) => {
     setAuthor(e.target.value)
 }
 
+const handleDateChange = (e) => {
+    setDate(e.target.value)
+}
+
 const searchByAuthorClickHandler = () => {
     setSearchByAuthor(prevState => !prevState)
 }
 
-const handleDateChange = (e) => {
-    setDate(e.target.value)
-}
 
 const searchByDateClickHandler = () => {
     setSearchByDate(prevState => !prevState)
 }
 
 
-const searchByNameOrDateOrAuthorRender = () => {
+const searchByTitleOrDateOrAuthorRender = () => {
     if (!searchByDate && !searchByAuthor) {
         return (
             <main className={classes.wrapper}>
@@ -83,7 +84,7 @@ const searchByNameOrDateOrAuthorRender = () => {
 
   return (
    <>
-       {searchByNameOrDateOrAuthorRender()}
+       {searchByTitleOrDateOrAuthorRender()}
    </>
   )
 }
