@@ -43,7 +43,7 @@
     right: 7em;
   }
   
-  @media only screen and (max-width: 860px) {
+  @media only screen and (max-width: 600px) {
     .github-icon {
       display: none;
     }
