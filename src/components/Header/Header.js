@@ -1,16 +1,31 @@
-import React from 'react'
-import './Header.css'
+import "./Header.css";
+import Github from "../Header/GithubImg";
+console.clear();
 
-const Header = (props) => {
-    // ! Johnny You dont need to touch the app component, I already passed your props to your component for you brotha
-    // TODO: once you set your Header inputs onChange property to the handleOnChange prop I passed your component, 
-    // TODO: the app will magically start searching whatever you type in automatically, we wont need any submit button either.
-    console.log('Johnnys props --', props)
+export default function Header(props) {
   return (
-    <header>
-       SPACE FOR JOHHNYS HEADER (:
-    </header>
-  )
+    <div className="Header">
+      <img
+        className="Img"
+        src="https://hn.algolia.com/packs/media/images/logo-hn-search-a822432b.png"
+        alt=""
+        height="45px"
+      ></img>
+      <h1 className="Search-text">Search</h1>
+      <p className="Hacker-text">Hacker News</p>
+      <label className="bar"></label>
+      <input
+        type="text"
+        placeholder="Search stories by title, url or author"
+        className="searchbar"
+        onChange={props.handleOnChange}
+      ></input>
+      <img
+        src="https://svg-clipart.com/clipart/orange/KXSlaIB-search-icon-orange-clipart.png"
+        className="search-btn"
+        alt=""
+      ></img>
+      <Github />
+    </div>
+  );
 }
-
-export default Header;

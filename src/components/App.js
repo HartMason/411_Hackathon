@@ -45,7 +45,7 @@ const searchByDateClickHandler = () => {
 const searchByTitleOrDateOrAuthorRender = () => {
 if (!searchByDate && !searchByAuthor) {
     return (
-     <>
+     <div className='Header-background'>
         <Header searchTerm={searchTerm} handleOnChange={ (e) => handleSearchChange(e) } />
         <main className={classes.wrapper}>
             <button onClick={searchByAuthorClickHandler} className={classes.pushable}><span className={classes.front}>Search by Author</span></button>
@@ -56,7 +56,7 @@ if (!searchByDate && !searchByAuthor) {
                                                         </SearchTermContextProvider>
                                                     )}
         </main> 
-    </>) }     
+    </div>) }     
 else if (!searchByAuthor && searchByDate) {
     return (
         <DateContextProvider date={date}>
