@@ -7,6 +7,7 @@ import AuthorContextProvider from '../store/AuthorContextProvider'
 import DateContextProvider from '../store/DateContextProvider'
 import ListByAuthor from './ListByAuthor/ListByAuthor'
 import classes from './App.module.css'
+import ListByDate from './ListByDate/ListByDate'
 
 
 
@@ -64,7 +65,7 @@ else if (!searchByAuthor && searchByDate) {
             <main className={classes.wrapper}>
                 <button onClick={searchByDateClickHandler} className={classes.pushable}><span className={classes.front}>Search by Title</span></button>
                 
-                {/*// ! Harts <ListByDate /> component goes here //*/}
+               <ListByDate />
             </main>
         </DateContextProvider> )
           
