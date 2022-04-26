@@ -26,7 +26,7 @@ const handleSearchChange = (e) => {
 
 const handleAuthorChange = (e) => {
     setAuthor(e.target.value)
-}
+}    
 
 const handleDateChange = (e) => {
     setDate(e.target.value)
@@ -56,7 +56,7 @@ if (!searchByDate && !searchByAuthor) {
                                                         </SearchTermContextProvider>
                                                     )}
         </main> 
-    </>) }     
+    </>) }   
 else if (!searchByAuthor && searchByDate) {
     return (
         <DateContextProvider date={date}>
