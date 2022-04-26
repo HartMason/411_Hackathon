@@ -50,12 +50,9 @@ if (!searchByDate && !searchByAuthor) {
 
         <Header searchTerm={searchTerm} handleOnChange={ (e) => handleSearchChange(e) } />
         <main className={classes.wrapper}> 
-        <Button onClick={searchByAuthorClickHandler} searchBy="Author"/>
-        
-         <Button onClick={searchByDateClickHandler} searchBy="Date"/>               
-          
-
-            {!searchTerm ? <InitialList /> : <ListBySearchTerm />}
+            <Button onClick={searchByAuthorClickHandler} searchBy="Author"/>
+            <Button onClick={searchByDateClickHandler} searchBy="Date"/>               
+                 {!searchTerm ? <InitialList /> : <ListBySearchTerm />}
         </main> 
 
     </SearchTermContextProvider>) }   
@@ -67,8 +64,6 @@ else if (!searchByAuthor && searchByDate) {
             <Header searchTerm={searchByDate} handleOnChange={(e) => handleDateChange(e)} />
             <main className={classes.wrapper}>
                 <Button onClick={searchByDateClickHandler} searchBy="Title"/>
-               
-                
                <ListByDate />
             </main>
         </DateContextProvider> )
