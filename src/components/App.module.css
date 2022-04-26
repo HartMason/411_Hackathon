@@ -1,6 +1,7 @@
 :root {
-    --side-border: 5vw solid black;
-    --btm-border: 5vh solid black;
+  background-color: rgb(37, 37, 37);
+  --side-border: 5vw solid rgb(37, 37, 37);
+  --btm-border: 5vh solid rgb(37, 37, 37);
 }
 
 .wrapper {
@@ -44,4 +45,9 @@
 
   .pushable:active .front {
     transform: translateY(-2px);
+  }
+
+  .Header-background{
+    width: 100%;
+    color: black;
   }

@@ -1,2 +1,57 @@
-
-/* Do yo thang (: */
+.Header {
+    margin-left: auto;
+    margin-right: auto;
+    width: 89.8%;
+    margin-top: -7px;
+    display: flex;
+    background-color: rgb(231, 117, 10);
+    height: 55px;
+  }
+  .Img {
+    margin-left: 1px;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+  .Search-text {
+    margin-top: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .Hacker-text {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 46px;
+    cursor: pointer;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+  }
+  .bar {
+    margin-right: 70px;
+  }
+  .searchbar {
+    margin-top: 3px;
+    width: 80em;
+    height: 37px;
+    text-indent: 25px;
+  }
+  .github-icon {
+    position: absolute;
+    cursor: pointer;
+    background-color: rgb(231, 117, 10);
+    margin-top: 5px;
+    right: 7em;
+  }
+  
+  @media only screen and (max-width: 860px) {
+    .github-icon {
+      display: none;
+    }
+  }
+  .search-btn {
+    margin-top: 2px;
+    position: absolute;
+    height: 45px;
+    margin-left: 10.4em;
+    cursor: text;
+  }
