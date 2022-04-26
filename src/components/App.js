@@ -47,6 +47,7 @@ const searchByTitleOrDateOrAuthorRender = () => {
 if (!searchByDate && !searchByAuthor) {
     return (
         <SearchTermContextProvider searchTerm={searchTerm}>
+
         <Header searchTerm={searchTerm} handleOnChange={ (e) => handleSearchChange(e) } />
         <main className={classes.wrapper}> 
         <Button onClick={searchByAuthorClickHandler} searchBy="Author"/>
@@ -56,7 +57,9 @@ if (!searchByDate && !searchByAuthor) {
 
             {!searchTerm ? <InitialList /> : <ListBySearchTerm />}
         </main> 
+
     </SearchTermContextProvider>) }     
+
 else if (!searchByAuthor && searchByDate) {
     return (
         <DateContextProvider date={date}>
