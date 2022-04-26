@@ -1,18 +1,24 @@
+:root {
+  --btn-bg-color-top: rgba(23, 1, 143, 0.8);
+  --btn-bg-color-btm: rgb(0, 12, 240, 0.8);
+}
+
 .pushable {
-    background: rgb(24, 0, 163);
+    background: var(--btn-bg-color-top);
     border-radius: 12px;
     border: none;
     padding: 0;
     cursor: pointer;
     outline-offset: 4px;
     padding-top: .5rem;
+    margin: .8rem;
   }
   .front {
     display: block;
     padding: 12px 42px;
     border-radius: 12px;
     font-size: 1.25rem;
-    background: rgb(0, 12, 240);
+    background: var(--btn-bg-color-btm);
     color: white;
     transform: translateY(-6px);
   }

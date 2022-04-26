@@ -1,6 +1,6 @@
 import "./Header.css";
 import Github from "../Header/GithubImg";
-console.clear();
+
 
 export default function Header(props) {
   return (
@@ -16,9 +16,10 @@ export default function Header(props) {
       <label className="bar"></label>
       <input
         type="text"
-        placeholder="Search stories by title, url or author"
+        placeholder="Search stories by title"
         className="searchbar"
         onChange={props.handleOnChange}
+        value={props.searchTerm}
       ></input>
       <img
         src="https://svg-clipart.com/clipart/orange/KXSlaIB-search-icon-orange-clipart.png"

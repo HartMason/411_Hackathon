@@ -14,7 +14,7 @@ import Button from './Button/Button'
 const App = () => {
     
 
- const [searchTerm, setSearchTerm] = useState('building')
+ const [searchTerm, setSearchTerm] = useState('')
  const [author, setAuthor] = useState('rob')
  const [date, setDate] = useState('02')
  const [searchByAuthor, setSearchByAuthor] = useState(false)
@@ -27,7 +27,7 @@ const handleSearchChange = (e) => {
 
 const handleAuthorChange = (e) => {
     setAuthor(e.target.value)
-}
+}    
 
 const handleDateChange = (e) => {
     setDate(e.target.value)
@@ -50,24 +50,20 @@ if (!searchByDate && !searchByAuthor) {
 
         <Header searchTerm={searchTerm} handleOnChange={ (e) => handleSearchChange(e) } />
         <main className={classes.wrapper}> 
-        <Button onClick={searchByAuthorClickHandler} searchBy="Author"/>
-        
-         <Button onClick={searchByDateClickHandler} searchBy="Date"/>               
-          
-
-            {!searchTerm ? <InitialList /> : <ListBySearchTerm />}
+            <Button onClick={searchByAuthorClickHandler} searchBy="Author"/>
+            <Button onClick={searchByDateClickHandler} searchBy="Date"/>               
+                 {!searchTerm ? <InitialList /> : <ListBySearchTerm />}
         </main> 
 
-    </SearchTermContextProvider>) }     
+    </SearchTermContextProvider>) }   
+
 
 else if (!searchByAuthor && searchByDate) {
     return (
         <DateContextProvider date={date}>
-            <Header searchTerm={searchByDate} handleOnChange={(e) => handleDateChange(e)} />
+            <Header searchTerm={date} handleOnChange={(e) => handleDateChange(e)} />
             <main className={classes.wrapper}>
                 <Button onClick={searchByDateClickHandler} searchBy="Title"/>
-               
-                
                <ListByDate />
             </main>
         </DateContextProvider> )
