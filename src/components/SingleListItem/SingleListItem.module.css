@@ -5,7 +5,7 @@
   }
   
   .info {
-    margin-left: -2.2em;
+    margin-left: 0em;
     border-bottom: none;
   }
   .info-items {
@@ -19,7 +19,7 @@
     text-decoration: underline;
   }
   .link {
-    margin-left: -2.6em;
+    margin-left: 0em;
     color: grey;
     text-decoration: none;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -30,7 +30,7 @@
   }
   .title {
     cursor: pointer;
-    margin-left: -2.3em;
+    margin-left: 0em;
     font-size: 14px;
     list-style: none;
     border-bottom: none;
