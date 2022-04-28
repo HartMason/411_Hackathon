@@ -9,6 +9,7 @@ import ListByAuthor from './ListByAuthor/ListByAuthor'
 import classes from './App.module.css'
 import ListByDate from './ListByDate/ListByDate'
 import Button from './Button/Button'
+import DropDown from './DropDown/DropDown'
 
 
 const App = () => {
@@ -19,6 +20,11 @@ const App = () => {
  const [date, setDate] = useState('02')
  const [searchByAuthor, setSearchByAuthor] = useState(false)
  const [searchByDate, setSearchByDate] = useState(false)
+
+
+const handleAllChange = (e) => {
+
+}
 
 const handleSearchChange = (e) => {
     setSearchTerm(e.target.value)
@@ -34,12 +40,16 @@ const handleDateChange = (e) => {
 }
 
 const searchByAuthorClickHandler = () => {
+    if (searchByDate === true) {setSearchByDate(false)}
     setSearchByAuthor(prevState => !prevState)
+
 }
 
 
 const searchByDateClickHandler = () => {
+    if (searchByAuthor === true) {setSearchByAuthor(false)}
     setSearchByDate(prevState => !prevState)
+    
 }
 
 
@@ -50,9 +60,10 @@ if (!searchByDate && !searchByAuthor) {
 
         <Header searchTerm={searchTerm} handleOnChange={ (e) => handleSearchChange(e) } />
         <main className={classes.wrapper}> 
-            <Button onClick={searchByAuthorClickHandler} searchBy="Author"/>
-            <Button onClick={searchByDateClickHandler} searchBy="Date"/>               
-                 {!searchTerm ? <InitialList /> : <ListBySearchTerm />}
+            <DropDown author={author} date={date} authorClick={searchByAuthorClickHandler} dateClick={searchByDateClickHandler}/>
+            {/* <Button onClick={searchByAuthorClickHandler} searchBy="Author"/>
+            <Button onClick={searchByDateClickHandler} searchBy="Date"/>                */}
+            {!searchTerm ? <InitialList /> : <ListBySearchTerm />}
         </main> 
 
     </SearchTermContextProvider>) }   
